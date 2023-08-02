@@ -1,6 +1,7 @@
 # RAM Monitor Taskbar Icon
 
 The RAM Monitor Taskbar Icon is a Python script that creates a taskbar icon displaying the current memory usage percentage.
+The project will run on Windows only.
 
 ## Requirements
 
@@ -23,17 +24,9 @@ python -m venv venv
 
 3. Activate the virtual environment:
 
-   - On Windows:
-
-   ```powershell
-   venv\Scripts\activate
-   ```
-
-   - On macOS/Linux:
-
-   ```bash
-   source venv/bin/activate
-   ```
+```powershell
+venv\Scripts\activate
+```
 
 4. Install the required packages from `requirements.txt`:
 

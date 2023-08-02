@@ -12,7 +12,7 @@ The RAM Monitor Taskbar Icon is a Python script that creates a taskbar icon disp
 
 ```bash
 git clone https://github.com/Raz-Dahan/MemoryDisplay.git
-cd MemroyDisplay
+cd MemoryDisplay
 ```
 
 2. Create a virtual environment (optional but recommended):

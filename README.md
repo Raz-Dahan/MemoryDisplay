@@ -1,7 +1,9 @@
 # RAM Monitor Taskbar Icon
 
-The RAM Monitor Taskbar Icon is a Python script that creates a taskbar icon displaying the current memory usage percentage.
-The project will run on Windows only.
+The RAM Monitor Taskbar Icon is a Python script that creates a taskbar icon displaying the current memory usage percentage. <br />
+The project will run on Windows only. <br />
+<br />
+You can download the [Release](releases/latest) and follow the installation instructions, this way the RAM monitor will run until you perform EXIT (right click).
 
 ## Requirements
 

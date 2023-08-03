@@ -8,13 +8,23 @@ import threading
 def get_memory_usage():
     return psutil.virtual_memory().percent
 
-# Global variable to control the program's state
+# Global variables to control the program's state and text color
 running = True
+text_color = (0, 0, 0)  # Default color: black
 
 # Function to exit the program and stop the icon
 def exit_program(icon, _item):
     global running
     running = False
+    icon.stop()
+
+# Function to toggle the text color between white and black
+def toggle_text_color(icon, _item):
+    global text_color
+    if text_color == (0, 0, 0):  # Current color is black, change to white
+        text_color = (255, 255, 255)
+    else:  # Current color is white, change to black
+        text_color = (0, 0, 0)
 
 # Update the icon thread with the new exit behavior
 def update_icon_thread(icon):
@@ -49,18 +59,17 @@ def create_icon(memory_usage):
     percentage_x = icon_center_x - (percentage_width / 2)
     percentage_y = icon_center_y - (int(percentage_height / 1.05))
 
-    draw.text((percentage_x, percentage_y), memory_percentage, font=font, fill=(0, 0, 0))
+    draw.text((percentage_x, percentage_y), memory_percentage, font=font, fill=text_color)
 
     return image
-
-# Function to exit the program and stop the icon
-def exit_program(icon, _item):
-    icon.stop()
 
 # Create the taskbar icon
 def create_taskbar_icon():
     memory_usage = get_memory_usage()
-    menu = (pystray.MenuItem('Exit', exit_program),)
+
+    # Create the menu with the "Exit" and "Toggle Text Color" options
+    menu = (pystray.MenuItem('Toggle Text Color', toggle_text_color), pystray.MenuItem('Exit', exit_program))
+    
     icon = pystray.Icon("Memory Usage", create_icon(memory_usage), "Memory Usage", menu)
 
     # Start the icon update thread

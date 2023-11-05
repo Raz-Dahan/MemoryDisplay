@@ -14,7 +14,7 @@ def get_cpu_usage():
 
 # Global variables to control the program's state, text color, and display mode
 running = True
-text_color = (0, 0, 0)  # Default color: black
+text_color = (255, 255, 255)  # Default color: white
 display_mode_memory = True  # Default display mode is memory usage
 
 # Function to exit the program and stop the icon
@@ -26,10 +26,10 @@ def exit_program(icon, _item):
 # Function to toggle the text color between white and black
 def toggle_text_color(icon, _item):
     global text_color
-    if text_color == (0, 0, 0):  # Current color is black, change to white
-        text_color = (255, 255, 255)
-    else:  # Current color is white, change to black
+    if text_color == (255, 255, 255):  # Current color is white, change to black
         text_color = (0, 0, 0)
+    else:  # Current color is black, change to white
+        text_color = (255, 255, 255)
 
 # Function to toggle between displaying memory usage and CPU usage
 def toggle_display_mode(icon, _item):
